@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form with Labels Inside Input</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <div class="formcon1">
+      <form>
+        <div class="form1">
+          <input
+            type="text"
+            id="yourcompany"
+            name="yourcompany"
+            placeholder="Your Company"
+          />
+        </div>
+        <div class="form1">
+          <input
+            type="text"
+            id="yourname"
+            name="yourname"
+            placeholder="Your Name"
+          />
+          <!-- Added name attribute -->
+        </div>
+        <div class="form1">
+          <input
+            type="text"
+            id="gstin"
+            name="gstin"
+            placeholder="Company's GSTIN"
+          />
+          <!-- Added name attribute -->
+        </div>
+        <div class="form1">
+          <input
+            type="text"
+            id="address"
+            name="address"
+            placeholder="Company's Address"
+          />
+          <!-- Added name attribute -->
+        </div>
+        <div class="form1">
+          <input type="text" id="state" name="state" placeholder="State" />
+        </div>
+        <div class="form1">
+          <select id="country" name="country">
+            <option value="" disabled selected>India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="canada">Canada</option>
+          </select>
+        </div>
+      </form>
+    </div>
+
+    <div class="formcon2">
+      <form>
+        <div class="form2">
+          <input
+            type="text"
+            id="billto"
+            name="billto"
+            value="Bill To:"
+            data-placeholder="Bill To:"
+          />
+        </div>
+        <div class="form2">
+          <input
+            type="text"
+            id="clientcompany"
+            name="clientcompany"
+            placeholder="Your Client's Company"
+          />
+          <!-- Corrected placeholder text -->
+        </div>
+        <div class="form2">
+          <input
+            type="text"
+            id="clientgstin"
+            name="clientgstin"
+            placeholder="Client's GSTIN"
+          />
+        </div>
+        <div class="form2">
+          <input
+            type="text"
+            id="clientaddress"
+            name="clientaddress"
+            placeholder="Client's Address"
+          />
+        </div>
+        <div class="form2">
+          <input
+            type="text"
+            id="clientcity"
+            name="clientcity"
+            placeholder="City"
+          />
+        </div>
+        <div class="form2">
+          <input
+            type="text"
+            id="clientstate"
+            name="clientstate"
+            placeholder="State"
+          />
+        </div>
+        <div class="form2">
+          <select id="clientcountry" name="clientcountry">
+            <option value="" disabled selected>India</option>
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+            <option value="uk">UK</option>
+          </select>
+        </div>
+      </form>
+    </div>
+
+    <div class="formcon3">
+      <form>
+        <div class="formcon3left">
+          <div class="form3left">
+            <input
+              type="text"
+              id="invoice"
+              name="invoice"
+              value="Invoice#"
+              data-placeholder="Invoice#"
+            />
+            <!-- Corrected id attribute -->
+          </div>
+          <div class="form3left">
+            <input
+              type="text"
+              id="invoicedate"
+              name="invoicedate"
+              value="Invoice Date"
+              data-placeholder="Invoice Date"
+            />
+          </div>
+          <div class="form3left">
+            <input
+              type="text"
+              id="duedate"
+              name="duedate"
+              value="Due Date"
+              data-placeholder="Due Date"
+            />
+          </div>
+        </div>
+
+        <div class="formcon3right">
+          <div class="form3right">
+            <input type="text" id="inv12" name="inv12" placeholder="INV-12" />
+          </div>
+          <div class="form3right">
+            <input type="text" id="date1" name="date1" placeholder="" />
+          </div>
+          <div class="form3right">
+            <input type="text" id="date2" name="date2" placeholder="" />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>
