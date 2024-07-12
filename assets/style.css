@@ -1,0 +1,49 @@
+body{
+  font-family: Arial,sans-serif;
+}
+.form1{
+  position: relative;
+  margin-bottom: 1%;
+}
+.form1 input,
+.from1 textarea,
+.form1 select{
+  width:100%;
+  padding:3px;
+  box-sizing: border-box;
+  border: none;
+  border-color: solid blue;
+  outline:none;
+}
+
+.form1 input:hover,
+.form1 textarea:hover,
+.form1 select:hover,
+.form1 input:focus,
+.form1 textarea:focus,
+.form1 select:focus{
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+
+.form2{
+  position: relative;
+  margin-bottom: 1%;
+}
+.form2 input,
+.form2 textarea,
+.form2 select{
+  width: 100%;
+  border: none;
+  padding: 3px;
+  outline: none;
+}
+.form2 input:hover,
+.form2 textarea:hover,
+.form2 select:hover,
+.form2 input:focus,
+.form2 textarea:focus,
+.form2 select:focus{
+  border: 1px solid blue;
+  border-radius: 5px;
+}
