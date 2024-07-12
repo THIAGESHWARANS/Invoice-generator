@@ -1,5 +1,9 @@
 body{
   font-family: Arial,sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .form1{
   position: relative;
@@ -46,4 +50,61 @@ body{
 .form2 select:focus{
   border: 1px solid blue;
   border-radius: 5px;
+}
+
+.form3left,.form3right{
+  position: relative;
+  margin-bottom: 1%;
+}
+
+.form3right input,
+.form3right textarea,
+.form3right select{
+  border:none;
+  padding: 3px;
+  outline: none;
+}
+
+.form3left input:hover,
+.form3left textarea:hover,
+.form3left select:hover,
+.form3left input:focus,
+.form3left textarea:focus,
+.form3left select:focus,
+.form3right input:hover,
+.form3right textarea:hover,
+.form3right select:hover,
+.form3right select:hover,
+.form3right input:focus,
+.form3right textarea:focus{
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+
+.form3left input,
+.form3left textarea,
+.form3left select{
+  border:none;
+  padding: 3px;
+  outline: none;
+}
+
+.grid1{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+}
+
+.formcon3left,.forcon3right{
+  display:flex;
+flex-direction: column;
+}
+
+.pdfcontainer{
+  height: 11in;
+  background-color: white;
+  padding: 1in;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin-top: 2rem;
 }
