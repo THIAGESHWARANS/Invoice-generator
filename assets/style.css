@@ -191,3 +191,182 @@ flex-direction: column;
   margin: 0;
   font-size: 0.8em; 
 }
+
+.upload-logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust spacing between logo and details */
+}
+
+.logo-box {
+  width: 50px; /* Adjust width of the box as needed */
+  height: 50px; /* Adjust height of the box as needed */
+  background-color: #f0f0f0; /* Light background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.upload-svg {
+  width: 30px; /* Adjust size of the SVG icon */
+  height: 30px; /* Adjust size of the SVG icon */
+  cursor: pointer; /* Add cursor pointer on hover */
+}
+
+.upload-details {
+  font-size: 12px; /* Adjust font size as desired */
+  color: #666; /* Adjust color as desired */
+}
+
+.uploaded-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  padding: 4px; /* Adjust padding as needed */
+  box-sizing: border-box;
+}
+
+.uploaded-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensure the image fits inside without stretching */
+}
+
+.image-options {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Adjust gap between icons */
+}
+
+.edit-svg,
+.delete-svg {
+  width: 20px; /* Adjust size of edit and delete icons */
+  height: 20px; /* Adjust size of edit and delete icons */
+  cursor: pointer; /* Add cursor pointer on hover */
+}
+
+.upload-label {
+  display: block; /* Ensure the label takes up the whole width */
+}
+
+.d-none {
+  display: none; /* Utility class to hide elements */
+}
+.grid0 {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 10px; /* Gap between the columns */
+}
+
+#headingInput{
+  font-size: 50px;
+  color:black;
+}
+
+.grid0left,.grid0right{
+  display: flex;
+  flex-direction: column;
+}
+
+.form0 input,
+.form0 textarea,
+.form0 select{
+  padding:3px;
+  border:none;
+  outline:none;
+}
+.form0 input:hover,
+.form0 input:focus,
+.form0 select:hover,
+.form0 select:focus,
+.form0 textarea:hover,
+.form0 textarea:focus{
+  border: 1px solid blue;
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+.date-container{
+  display:flex;
+  align-items: center;
+}
+.calendar-icon{
+  cursor:pointer;
+  width:15px;
+  height: 15px;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px;
+  background-color: white;
+  border:1px solid #ddd;
+  width:100%;
+}
+
+
+.logo img{
+  top:0;
+  left:0;
+  position: absolute;
+  width:85px;
+  height: 55px;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.freeinvoice a{
+
+  text-decoration: none;
+  color: black;
+}
+.logo{
+  display: flex;
+  align-items: center;
+}
+.freeinvoice{
+  position: absolute;
+  margin-left:90px;
+}
+.signup a{
+  background-color: rgb(255, 123, 0);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color:white;
+}
+
+#downloadPDF{
+  background-color:rgba(23, 127, 255, 0.818);
+  color: white;
+  border:none;
+  padding:10px 20px;
+  font-size:16px;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+@media (max-width: 768px) {
+  .grid0 {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+  }
+}
