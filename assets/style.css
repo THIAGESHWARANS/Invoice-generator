@@ -16,7 +16,6 @@ body{
   padding:3px;
   box-sizing: border-box;
   border: none;
-  border-color: solid blue;
   outline:none;
 }
 
@@ -28,6 +27,7 @@ body{
 .form1 select:focus{
   border: 1px solid blue;
   border-radius: 5px;
+  box-shadow: none;
 }
 
 .form2{
@@ -50,6 +50,7 @@ body{
 .form2 select:focus{
   border: 1px solid blue;
   border-radius: 5px;
+  box-shadow: none;
 }
 
 .form3left,.form3right{
@@ -62,7 +63,6 @@ body{
 .form3right select{
   border:none;
   padding: 3px;
-  outline: none;
 }
 
 .form3left input:hover,
@@ -74,11 +74,11 @@ body{
 .form3right input:hover,
 .form3right textarea:hover,
 .form3right select:hover,
-.form3right select:hover,
 .form3right input:focus,
 .form3right textarea:focus{
   border: 1px solid blue;
   border-radius: 5px;
+  box-shadow: none;
 }
 
 .form3left input,
@@ -86,7 +86,6 @@ body{
 .form3left select{
   border:none;
   padding: 3px;
-  outline: none;
 }
 
 .grid1{
@@ -101,10 +100,94 @@ flex-direction: column;
 }
 
 .pdfcontainer{
-  height: 11in;
+  height:auto;
   background-color: white;
-  padding: 1in;
+  padding:2%;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   overflow: hidden;
   margin-top: 2rem;
+}
+
+.form4 input,
+.form4 textarea,
+.form4 select{
+  padding:3px;
+  border:none;
+  outline:none;
+}
+.form4 input:hover,
+.form4 input:focus,
+.form4 select:hover,
+.form4 select:focus,
+.form4 textarea:hover,
+.form4 textarea:focus{
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+
+
+.editable{
+  border:none;
+  overflow:hidden;
+}
+.editable:focus,
+.editable:hover{
+  border:1px solid blue;
+  border-radius: 5px;
+  outline:none;
+}
+.full-width-textarea{
+  position:relative;
+  width:100%;
+  box-sizing: border-box;
+}
+
+.form5 input,
+.form5 textarea,
+.form5 select{
+  padding:3px;
+  border:none;
+  outline:none;
+}
+.form5 input:hover,
+.form5 input:focus,
+.form5 select:hover,
+.form5 select:focus,
+.form5 textarea:hover,
+.form5 textarea:focus{
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+
+.form6 input,
+.form6 textarea,
+.form6 select{
+  padding:3px;
+  border:none;
+  outline:none;
+}
+.form6 input:hover,
+.form6 input:focus,
+.form6 select:hover,
+.form6 select:focus,
+.form6 textarea:hover,
+.form6 textarea:focus{
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+
+.footer-content {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+}
+
+.footer-content img {
+  width: 100px; 
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.8em; 
 }
