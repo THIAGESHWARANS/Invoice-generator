@@ -5,43 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form with Labels Inside Input</title>
     <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="assets/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
   </head>
   <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets\images\ZOHO_logo_2023.svg.png" alt="zoho logo" />
+      </div>
+      <div class="freeinvoice">
+        <a href="#">Free GST Invoice Generator</a>
+        <p>by Zoho Invoice</p>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Check out Zoho invoice</a></li>
+        <li class="signup"><a href="#">Sign up. It's Free!</a></li>
+      </ul>
+    </nav>
     <div class="container my-4">
       <div class="pdfcontainer">
-        
-        <!-- Upload Logo Section -->
-        <div class="upload-logo-container">
-         <svg
-          data-name="Layer 1"
-          viewBox="0 0 512 512"
-          alt="upload"
-          class="upload-svg"
-        >
-          <path
-            d="M340.7061,253.5177a21.0039,21.0039,0,0,1-29.7,0l-37.36-37.37v130.4a21,21,0,1,1-42,0v-130.4l-37.37,37.37a21.0011,21.0011,0,1,1-29.7-29.7l73.22-73.22a21.0035,21.0035,0,0,1,29.7,0l73.21,73.22A21.0041,21.0041,0,0,1,340.7061,253.5177Z"
-            style="fill: #5b9aff"
-          ></path>
-          <path
-            d="M439.086,400.7277a20.9985,20.9985,0,1,1-33.43-25.42,192.0478,192.0478,0,0,0-17.24-251.77c-74.85-74.87-196.66-74.88-271.53-.03a192.0528,192.0528,0,0,0-17.29,251.76,20.9985,20.9985,0,1,1-33.43,25.42,234.019,234.019,0,0,1,186.47-375.4h.03a234.0221,234.0221,0,0,1,186.42,375.44Z"
-            style="fill: #5b9aff"
-          ></path>
-          <path
-            d="M485.6461,470.0377a21.0039,21.0039,0,0,1-21,21h-424a21,21,0,0,1,0-42h424A21.004,21.004,0,0,1,485.6461,470.0377Z"
-            style="fill: #5b9aff"
-          ></path>
-        </svg>
-        
-          <p>Upload Logo</p>
-          <p>240 x 240 pixels @ 72 DPI,</p>
-          <p>Maximum size of 1MB.</p>
-          <input type="file" id="uploadLogo" accept="image/*" class="d-none" />
+        <div class="grid0">
+          <!-- Upload Logo Section -->
+          <div class="grid0left">
+            <div class="upload-logo-container">
+              <div class="logo-box">
+                <input
+                  type="file"
+                  id="uploadLogo"
+                  accept="image/*"
+                  class="d-none"
+                  onchange="handleImageUpload(event)"
+                />
+                <label for="uploadLogo">
+                  <svg
+                    data-name="Layer 1"
+                    viewBox="0 0 512 512"
+                    alt="upload"
+                    class="upload-svg"
+                  >
+                    <path
+                      d="M340.7061,253.5177a21.0039,21.0039,0,0,1-29.7,0l-37.36-37.37v130.4a21,21,0,1,1-42,0v-130.4l-37.37,37.37a21.0011,21.0011,0,1,1-29.7-29.7l73.22-73.22a21.0035,21.0035,0,0,1,29.7,0l73.21,73.22A21.0041,21.0041,0,0,1,340.7061,253.5177Z"
+                      style="fill: #5b9aff"
+                    ></path>
+                    <path
+                      d="M439.086,400.7277a20.9985,20.9985,0,1,1-33.43-25.42,192.0478,192.0478,0,0,0-17.24-251.77c-74.85-74.87-196.66-74.88-271.53-.03a192.0528,192.0528,0,0,0-17.29,251.76,20.9985,20.9985,0,1,1-33.43,25.42,234.019,234.019,0,0,1,186.47-375.4h.03a234.0221,234.0221,0,0,1,186.42,375.44Z"
+                      style="fill: #5b9aff"
+                    ></path>
+                    <path
+                      d="M485.6461,470.0377a21.0039,21.0039,0,0,1-21,21h-424a21,21,0,0,1,0-42h424A21.004,21.004,0,0,1,485.6461,470.0377Z"
+                      style="fill: #5b9aff"
+                    ></path>
+                  </svg>
+                </label>
+                <div
+                  id="uploadedImageContainer"
+                  class="uploaded-image-container d-none"
+                >
+                  <img
+                    id="uploadedImage"
+                    class="uploaded-image"
+                    src=""
+                    alt="Uploaded Image"
+                  />
+                  <div class="image-options">
+                    <svg
+                      data-name="Layer 1"
+                      viewBox="0 0 512 512"
+                      alt="edit-icon"
+                      class="edit-svg"
+                      onclick="editImage()"
+                    >
+                      <path
+                        d="M423.1666,92.5366a97.1933,97.1933,0,0,0-137.24,0l-37.5,37.48-140.98,140.9-.73.74a110.9345,110.9345,0,0,0-30.63,57.67l-13.6894,70.79a43.7167,43.7167,0,0,0,50.32,51.37l71.98-12.34a110.8992,110.8992,0,0,0,60-31.03l140.99-140.92,37.48-37.46a96.9785,96.9785,0,0,0,0-137.2Zm-208.16,285.87a69.1374,69.1374,0,0,1-37.4,19.35l-71.99,12.33a1.5714,1.5714,0,0,1-1.52-.49,1.5443,1.5443,0,0,1-.46-1.51l13.68-70.79a69.13,69.13,0,0,1,19.1-35.94l126.87-126.81,77.84,77.81Zm178.47-178.38-22.64,22.63-77.85-77.8,22.63-22.62a55.0306,55.0306,0,1,1,77.86,77.79Z"
+                        style="fill: #010101"
+                      ></path>
+                    </svg>
+                    <svg
+                      data-name="Layer 1"
+                      viewBox="0 0 512 512"
+                      alt="delete"
+                      class="delete-svg"
+                      onclick="deleteImage()"
+                    >
+                      <path
+                        d="M428.3265,93.1812h-84.49v1.04h-133.56v-22.72a9.8374,9.8374,0,0,1,9.82-9.82h71.81a9.8286,9.8286,0,0,1,9.81,9.82v21.68h42.12v-21.68a51.9942,51.9942,0,0,0-51.93-51.93h-71.81a51.9967,51.9967,0,0,0-51.94,51.93v21.68h-84.49a21,21,0,0,0,0,42h14.3l15.71,280.72a80.0218,80.0218,0,0,0,79.86,75.51h124.93a80.0124,80.0124,0,0,0,79.85-75.51l15.72-280.72h14.29a21,21,0,1,0,0-42Zm-69.85,320.49a40.0925,40.0925,0,0,1-40.01,37.83h-124.93a40.0923,40.0923,0,0,1-40.01-37.83l-15.59-278.49-.06-1.05h236.25l-.06,1.05Z"
+                        style="fill: #fd7172"
+                      ></path>
+                      <rect
+                        x="210.2767"
+                        y="93.1812"
+                        width="133.5601"
+                        height="1.04"
+                        style="fill: #fd7172"
+                      ></rect>
+                      <polygon
+                        points="374.127 134.131 374.067 135.181 137.937 135.181 137.877 134.131 374.127 134.131"
+                        style="fill: #fd7172"
+                      ></polygon>
+                      <path
+                        d="M182.5067,134.1312h13.42a20.22,20.22,0,0,1-5.36,1.05c-.44.04-.9.05-1.35.05s-.91-.01-1.35-.05A20.226,20.226,0,0,1,182.5067,134.1312Z"
+                        style="fill: #fd7172"
+                      ></path>
+                      <path
+                        d="M316.0667,134.1312h13.42a20.2189,20.2189,0,0,1-5.36,1.05c-.44.04-.9.05-1.35.05s-.91-.01-1.35-.05A20.2267,20.2267,0,0,1,316.0667,134.1312Z"
+                        style="fill: #fd7172"
+                      ></path>
+                      <rect
+                        x="301.7166"
+                        y="93.1812"
+                        width="42.1201"
+                        height="1.04"
+                        style="fill: #fd7172"
+                      ></rect>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="upload-details">
+                <p class="upload-label">Upload Logo</p>
+                <p>240 x 240 pixels @ 72 DPI,</p>
+                <p>Maximum size of 1MB.</p>
+              </div>
+            </div>
+          </div>
+          <div class="grid0right">
+            <div class="form-group form0">
+              <input
+                type="text"
+                id="headingInput"
+                name="heading"
+                class="form-control"
+                value="TAX INVOICE"
+              />
+            </div>
+          </div>
         </div>
-
         <div class="formcon1">
           <form>
             <div class="form-group form1">
@@ -78,6 +180,7 @@
                 name="address"
                 class="form-control"
                 placeholder="Company's Address"
+                autocomplete="address"
               />
             </div>
             <div class="form-group form1">
@@ -90,8 +193,13 @@
               />
             </div>
             <div class="form-group form1">
-              <select id="country" name="country" class="form-control">
-                <option value="" disabled selected>India</option>
+              <select
+                id="country"
+                name="country"
+                class="form-control"
+                autocomplete="country"
+              >
+                <option value="india" selected>India</option>
                 <option value="usa">USA</option>
                 <option value="uk">UK</option>
                 <option value="canada">Canada</option>
@@ -219,22 +327,38 @@
                   />
                 </div>
                 <div class="form-group form3right">
-                  <input
-                    type="text"
-                    id="date1"
-                    name="date1"
-                    class="form-control"
-                    placeholder=""
-                  />
+                  <div class="date-container">
+                    <input
+                      type="text"
+                      id="date1"
+                      name="date1"
+                      class="form-control"
+                      placeholder=""
+                    />
+                    <img
+                      src="https://img.icons8.com/ios-filled/50/000000/calendar.png"
+                      alt="calendar icon"
+                      class="calendar-icon"
+                      id="calendar-icon1"
+                    />
+                  </div>
                 </div>
                 <div class="form-group form3right">
-                  <input
-                    type="text"
-                    id="date2"
-                    name="date2"
-                    class="form-control"
-                    placeholder=""
-                  />
+                  <div class="date-container">
+                    <input
+                      type="text"
+                      id="date2"
+                      name="date2"
+                      class="form-control"
+                      placeholder=""
+                    />
+                    <img
+                      src="https://img.icons8.com/ios-filled/50/000000/calendar.png"
+                      alt="calendar icon"
+                      class="calendar-icon"
+                      id="calendar-icon2"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -386,6 +510,9 @@ Please make the payment by the due date.</textarea
         </div>
       </div>
     </div>
+    <button id="downloadPDF">Download PDF</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
     <script src="assets/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
