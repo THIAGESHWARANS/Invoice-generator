@@ -4,193 +4,391 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form with Labels Inside Input</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <div class="pdfcontainer">
-      <div class="formcon1">
-        <form>
-          <div class="form1">
-            <input
-              type="text"
-              id="yourcompany"
-              name="yourcompany"
-              placeholder="Your Company"
-            />
-          </div>
-          <div class="form1">
-            <input
-              type="text"
-              id="yourname"
-              name="yourname"
-              placeholder="Your Name"
-            />
-            <!-- Added name attribute -->
-          </div>
-          <div class="form1">
-            <input
-              type="text"
-              id="gstin"
-              name="gstin"
-              placeholder="Company's GSTIN"
-            />
-            <!-- Added name attribute -->
-          </div>
-          <div class="form1">
-            <input
-              type="text"
-              id="address"
-              name="address"
-              placeholder="Company's Address"
-            />
-            <!-- Added name attribute -->
-          </div>
-          <div class="form1">
-            <input type="text" id="state" name="state" placeholder="State" />
-          </div>
-          <div class="form1">
-            <select id="country" name="country">
-              <option value="" disabled selected>India</option>
-              <option value="usa">USA</option>
-              <option value="uk">UK</option>
-              <option value="canada">Canada</option>
-            </select>
-          </div>
-        </form>
-      </div>
+    <div class="container my-4">
+      <div class="pdfcontainer">
+        
+        <!-- Upload Logo Section -->
+        <div class="upload-logo-container">
+         <svg
+          data-name="Layer 1"
+          viewBox="0 0 512 512"
+          alt="upload"
+          class="upload-svg"
+        >
+          <path
+            d="M340.7061,253.5177a21.0039,21.0039,0,0,1-29.7,0l-37.36-37.37v130.4a21,21,0,1,1-42,0v-130.4l-37.37,37.37a21.0011,21.0011,0,1,1-29.7-29.7l73.22-73.22a21.0035,21.0035,0,0,1,29.7,0l73.21,73.22A21.0041,21.0041,0,0,1,340.7061,253.5177Z"
+            style="fill: #5b9aff"
+          ></path>
+          <path
+            d="M439.086,400.7277a20.9985,20.9985,0,1,1-33.43-25.42,192.0478,192.0478,0,0,0-17.24-251.77c-74.85-74.87-196.66-74.88-271.53-.03a192.0528,192.0528,0,0,0-17.29,251.76,20.9985,20.9985,0,1,1-33.43,25.42,234.019,234.019,0,0,1,186.47-375.4h.03a234.0221,234.0221,0,0,1,186.42,375.44Z"
+            style="fill: #5b9aff"
+          ></path>
+          <path
+            d="M485.6461,470.0377a21.0039,21.0039,0,0,1-21,21h-424a21,21,0,0,1,0-42h424A21.004,21.004,0,0,1,485.6461,470.0377Z"
+            style="fill: #5b9aff"
+          ></path>
+        </svg>
+        
+          <p>Upload Logo</p>
+          <p>240 x 240 pixels @ 72 DPI,</p>
+          <p>Maximum size of 1MB.</p>
+          <input type="file" id="uploadLogo" accept="image/*" class="d-none" />
+        </div>
 
-      <div class="formcon2">
-        <form>
-          <div class="form2">
-            <input
-              type="text"
-              id="billto"
-              name="billto"
-              value="Bill To:"
-              data-placeholder="Bill To:"
-            />
-          </div>
-          <div class="form2">
-            <input
-              type="text"
-              id="clientcompany"
-              name="clientcompany"
-              placeholder="Your Client's Company"
-            />
-            <!-- Corrected placeholder text -->
-          </div>
-          <div class="form2">
-            <input
-              type="text"
-              id="clientgstin"
-              name="clientgstin"
-              placeholder="Client's GSTIN"
-            />
-          </div>
-          <div class="form2">
-            <input
-              type="text"
-              id="clientaddress"
-              name="clientaddress"
-              placeholder="Client's Address"
-            />
-          </div>
-          <div class="form2">
-            <input
-              type="text"
-              id="clientcity"
-              name="clientcity"
-              placeholder="City"
-            />
-          </div>
-          <div class="form2">
-            <input
-              type="text"
-              id="clientstate"
-              name="clientstate"
-              placeholder="State"
-            />
-          </div>
-          <div class="form2">
-            <select id="clientcountry" name="clientcountry">
-              <option value="" disabled selected>India</option>
-              <option value="usa">USA</option>
-              <option value="canada">Canada</option>
-              <option value="uk">UK</option>
-            </select>
-          </div>
-        </form>
-      </div>
+        <div class="formcon1">
+          <form>
+            <div class="form-group form1">
+              <input
+                type="text"
+                id="yourcompany"
+                name="yourcompany"
+                class="form-control"
+                placeholder="Your Company"
+              />
+            </div>
+            <div class="form-group form1">
+              <input
+                type="text"
+                id="yourname"
+                name="yourname"
+                class="form-control"
+                placeholder="Your Name"
+              />
+            </div>
+            <div class="form-group form1">
+              <input
+                type="text"
+                id="gstin"
+                name="gstin"
+                class="form-control"
+                placeholder="Company's GSTIN"
+              />
+            </div>
+            <div class="form-group form1">
+              <input
+                type="text"
+                id="address"
+                name="address"
+                class="form-control"
+                placeholder="Company's Address"
+              />
+            </div>
+            <div class="form-group form1">
+              <input
+                type="text"
+                id="state"
+                name="state"
+                class="form-control"
+                placeholder="State"
+              />
+            </div>
+            <div class="form-group form1">
+              <select id="country" name="country" class="form-control">
+                <option value="" disabled selected>India</option>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="canada">Canada</option>
+              </select>
+            </div>
+          </form>
+        </div>
 
-      <div class="formcon3">
-        <form>
-          <div class="grid1">
-            <div class="formcon3left">
-              <div class="form3left">
-                <input
-                  type="text"
-                  id="invoice"
-                  name="invoice"
-                  value="Invoice#"
-                  data-placeholder="Invoice#"
-                />
-                <!-- Corrected id attribute -->
+        <div class="formcon2">
+          <form>
+            <div class="form-group form2">
+              <input
+                type="text"
+                id="billto"
+                name="billto"
+                class="form-control"
+                value="Bill To:"
+                data-placeholder="Bill To:"
+              />
+            </div>
+            <div class="form-group form2">
+              <input
+                type="text"
+                id="clientcompany"
+                name="clientcompany"
+                class="form-control"
+                placeholder="Your Client's Company"
+              />
+            </div>
+            <div class="form-group form2">
+              <input
+                type="text"
+                id="clientgstin"
+                name="clientgstin"
+                class="form-control"
+                placeholder="Client's GSTIN"
+              />
+            </div>
+            <div class="form-group form2">
+              <input
+                type="text"
+                id="clientaddress"
+                name="clientaddress"
+                class="form-control"
+                placeholder="Client's Address"
+              />
+            </div>
+            <div class="form-group form2">
+              <input
+                type="text"
+                id="clientcity"
+                name="clientcity"
+                class="form-control"
+                placeholder="City"
+              />
+            </div>
+            <div class="form-group form2">
+              <input
+                type="text"
+                id="clientstate"
+                name="clientstate"
+                class="form-control"
+                placeholder="State"
+              />
+            </div>
+            <div class="form-group form2">
+              <select
+                id="clientcountry"
+                name="clientcountry"
+                class="form-control"
+              >
+                <option value="" disabled selected>India</option>
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <div class="formcon3">
+          <form>
+            <div class="form-row grid1">
+              <div class="col formcon3left">
+                <div class="form-group form3left">
+                  <input
+                    type="text"
+                    id="invoice"
+                    name="invoice"
+                    class="form-control"
+                    value="Invoice#"
+                    data-placeholder="Invoice#"
+                  />
+                </div>
+                <div class="form-group form3left">
+                  <input
+                    type="text"
+                    id="invoicedate"
+                    name="invoicedate"
+                    class="form-control"
+                    value="Invoice Date"
+                    data-placeholder="Invoice Date"
+                  />
+                </div>
+                <div class="form-group form3left">
+                  <input
+                    type="text"
+                    id="duedate"
+                    name="duedate"
+                    class="form-control"
+                    value="Due Date"
+                    data-placeholder="Due Date"
+                  />
+                </div>
               </div>
-              <div class="form3left">
-                <input
-                  type="text"
-                  id="invoicedate"
-                  name="invoicedate"
-                  value="Invoice Date"
-                  data-placeholder="Invoice Date"
-                />
-              </div>
-              <div class="form3left">
-                <input
-                  type="text"
-                  id="duedate"
-                  name="duedate"
-                  value="Due Date"
-                  data-placeholder="Due Date"
-                />
+
+              <div class="col formcon3right">
+                <div class="form-group form3right">
+                  <input
+                    type="text"
+                    id="inv12"
+                    name="inv12"
+                    class="form-control"
+                    placeholder="INV-12"
+                  />
+                </div>
+                <div class="form-group form3right">
+                  <input
+                    type="text"
+                    id="date1"
+                    name="date1"
+                    class="form-control"
+                    placeholder=""
+                  />
+                </div>
+                <div class="form-group form3right">
+                  <input
+                    type="text"
+                    id="date2"
+                    name="date2"
+                    class="form-control"
+                    placeholder=""
+                  />
+                </div>
               </div>
             </div>
+          </form>
+        </div>
 
-            <div class="formcon3right">
-              <div class="form3right">
-                <input
-                  type="text"
-                  id="inv12"
-                  name="inv12"
-                  placeholder="INV-12"
-                />
-              </div>
-              <div class="form3right">
-                <input type="text" id="date1" name="date1" placeholder="" />
-              </div>
-              <div class="form3right">
-                <input type="text" id="date2" name="date2" placeholder="" />
-              </div>
+        <div class="formcon4">
+          <form>
+            <div class="form-group form4">
+              <label for="placeofsupply" class="mr-2">Place of Supply: </label>
+              <input
+                type="text"
+                id="placeofsupply"
+                name="placeofsupply"
+                class="form4style"
+                placeholder="State"
+              />
             </div>
-          </div>
-        </form>
-      </div>
+          </form>
+        </div>
 
-      <div class="form4">
-        <form>
-          <div class="form4">
-            <label for="placeofsupply">Place of Supply: </label>
-            <input
-              type="text"
-              id="placeofsupply"
-              name="placeofsupply"
-              placeholder="State"
-            />
-          </div>
-        </form>
+        <!-- Table Section -->
+        <div class="container mt-4">
+          <table class="table table-bordered" id="invoiceTable">
+            <thead>
+              <tr>
+                <th class="editable" contenteditable="true">
+                  Item Description
+                </th>
+                <th class="editable" contenteditable="true">HSN/SAC</th>
+                <th class="editable" contenteditable="true">Qty</th>
+                <th class="editable" contenteditable="true">Rate</th>
+                <th class="editable" contenteditable="true">SGST (%)</th>
+                <th class="editable" contenteditable="true">CGST (%)</th>
+                <th class="editable" contenteditable="true">Cess</th>
+                <th class="editable" contenteditable="true">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Initial Row -->
+              <tr>
+                <td><textarea class="editable">Brochure Design</textarea></td>
+                <td>
+                  <input
+                    type="text"
+                    class="form-control hsn-sac"
+                    value="HSN/SAC"
+                  />
+                </td>
+                <td>
+                  <input type="number" class="form-control qty" value="2" />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    class="form-control rate"
+                    value="100.00"
+                  />
+                </td>
+                <td>
+                  <input type="number" class="form-control sgst" value="6" />
+                </td>
+                <td>
+                  <input type="number" class="form-control cgst" value="6" />
+                </td>
+                <td>
+                  <input type="number" class="form-control cess" value="0" />
+                </td>
+                <td><span class="total-value">200.00</span></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="7" class="text-right">
+                  <strong>Sub Total</strong>
+                </td>
+                <td><span id="subTotal">200.00</span></td>
+              </tr>
+              <tr>
+                <td colspan="7" class="text-right">
+                  <strong>SGST (6%)</strong>
+                </td>
+                <td><span id="totalSGST">12.00</span></td>
+              </tr>
+              <tr>
+                <td colspan="7" class="text-right">
+                  <strong>CGST (6%)</strong>
+                </td>
+                <td><span id="totalCGST">12.00</span></td>
+              </tr>
+              <tr>
+                <td colspan="7" class="text-right"><strong>Total</strong></td>
+                <td><span id="total">224.00</span></td>
+              </tr>
+            </tfoot>
+          </table>
+          <!-- Add Line Item Button -->
+          <button type="button" class="btn btn-primary" id="addLineItem">
+            Add Line Item
+          </button>
+        </div>
+
+        <!--Notes Section-->
+        <div class="container my-4 formcon5 form-group">
+          <form>
+            <div class="form5">
+              <input
+                type="text"
+                id="notes"
+                name="notes"
+                class="form-control"
+                value="Notes"
+                data-placeholder="Notes"
+              />
+            </div>
+            <div class="form5">
+              <textarea class="editable full-width-textarea">
+It was great doing business with you.</textarea
+              >
+            </div>
+          </form>
+        </div>
+
+        <!--Terms and conditions-->
+        <div class="container my-4 formcon6 form-group">
+          <form>
+            <div class="form6">
+              <input
+                type="text"
+                id="terms"
+                name="terms"
+                class="form-control"
+                value="Terms & Conditions"
+              />
+            </div>
+            <div class="form6">
+              <textarea class="editable full-width-textarea">
+Please make the payment by the due date.</textarea
+              >
+            </div>
+          </form>
+        </div>
+
+        <!-- Footer Content -->
+        <div class="footer-content">
+          <img src="assets\images\invoice.png" alt="Zoho Invoice" />
+          <p>Powered by Zoho Invoice</p>
+          <p>100% Free Invoicing Solution</p>
+        </div>
       </div>
     </div>
-  
     <script src="assets/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
